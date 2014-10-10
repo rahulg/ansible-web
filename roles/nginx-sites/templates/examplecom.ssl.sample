@@ -1,0 +1,8 @@
+ssl_certificate {{ ssl.dest.cert }}/{{ ssl.examplecom.chained }};
+ssl_certificate_key {{ ssl.dest.key }}/{{ ssl.examplecom.key }};
+ssl_protocols TLSv1.2 TLSv1.1 TLSv1 SSLv3;
+ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:AES256-GCM-SHA384:AES128-GCM-SHA256:HIGH:!RC4:!MD5:!aNULL:!eNULL:!LOW;
+ssl_prefer_server_ciphers on;
+ssl_session_cache  shared:SSL:10m;
+add_header Strict-Transport-Security "max-age=16070400; includeSubDomains";
+add_header X-Frame-Options SAMEORIGIN;

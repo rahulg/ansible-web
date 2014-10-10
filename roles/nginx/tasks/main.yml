@@ -1,0 +1,19 @@
+---
+- name: install nginx
+  yum:
+    name=nginx
+    state=latest
+
+- name: create www folder
+  file:
+    path=/var/www
+    state=directory
+    owner=nginx
+    group=nginx
+    mode=0775
+
+- name: copy nginx.conf
+  template:
+    src=nginx.conf
+    dest={{ conf.dest }}
+  notify: restart nginx

@@ -1,0 +1,12 @@
+---
+conf:
+  dest: /etc/nginx/nginx.conf
+  user: nginx
+  workers: 1
+  worker_conns: 1000
+  default_type: text/plain
+  max_body_size: 20M
+  logs:
+    access: /var/log/nginx/access.log
+    error: /var/log/nginx/error.log crit
+  site_dir: /etc/nginx/conf.d/*.conf

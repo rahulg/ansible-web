@@ -1,0 +1,4 @@
+---
+conf_dir: /etc/nginx
+site_dir: /etc/nginx/conf.d
+www: /var/www

@@ -1,0 +1,20 @@
+---
+- name: copy website config
+  template:
+    src={{ item }}
+    dest={{ site_dir }}/
+    mode=0644
+    owner=root
+    group=root
+  with_fileglob: "../templates/*.conf"
+  notify: reload nginx  
+
+- name: copy ssl config
+  template:
+    src={{ item }}
+    dest={{ conf_dir }}/
+    mode=0644
+    owner=root
+    group=root
+  with_fileglob: "../templates/*.ssl"
+  notify: reload nginx
